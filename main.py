@@ -20,10 +20,11 @@ def main():
     clock = pygame.time.Clock()
     game = Game(WIN)
 
-    
-
     while run:
         clock.tick(FPS)
+        if game.winner() != None:
+            print(game.winner())
+            run = False
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -35,8 +36,7 @@ def main():
                 game.select(row, col)
 
         game.update()
-    if game.winner() != None:
-        print(game.winner())
+
     pygame.quit()
 
 
