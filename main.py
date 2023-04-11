@@ -23,7 +23,8 @@ def main():
     while run:
         clock.tick(FPS)
         if game.winner() != None:
-            print(game.winner())
+            print('RED' if game.winner() == RED else 'WHITE')
+            print('wins!')
             run = False
 
         for event in pygame.event.get():
